@@ -1,5 +1,5 @@
 sceneSetups:
-- path: C:/Users/FRL/Desktop/Sam_Thesis/Thesis_Draft2/Assets/Assets/Scenes/Table.unity
+- path: Assets/Scenes/Table.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -112,6 +112,7 @@
     <Compile Include="Assets\Models\FRL.XR-master\FRL\XR\XRManager.cs" />
     <Compile Include="Assets\Models\FRL.XR-master\FRL\XR\XRModel.cs" />
     <Compile Include="Assets\Models\FRL.XR-master\FRL\XR\XRMouseLook.cs" />
+    <Compile Include="Assets\Scripts\BeachTimelineController.cs" />
     <Compile Include="Assets\Scripts\CreateObject.cs" />
     <Compile Include="Assets\Scripts\Drawing.cs" />
     <Compile Include="Assets\Scripts\LineRendering.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using FRL.IO;
 
 public class Drawing : MonoBehaviour
@@ -8,7 +9,9 @@ public class Drawing : MonoBehaviour
     public GameObject brushStroke;
     public GameObject modelObject;
     // Use this for initialization
+    private Scene scene;
 	void Start () {
+        Scene scene = SceneManager.GetActiveScene();
 	}
 	
 	// Update is called once per frame
@@ -29,7 +32,15 @@ public class Drawing : MonoBehaviour
     {
         GameObject obj = Instantiate(brushStroke);
         obj.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
-        obj.transform.position = collision.contacts[0].point + new Vector3(0f, 0, 0);
+
+        if(scene.name == "Beach")
+        {
+            obj.transform.position = collision.contacts[0].point - new Vector3(0f, 0.5f, 0);
+        }
+        else
+        {
+            obj.transform.position = collision.contacts[0].point;
+        }
 
         gameObject.transform.position = obj.transform.position;
 

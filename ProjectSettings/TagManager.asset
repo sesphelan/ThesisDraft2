@@ -15,6 +15,7 @@ TagManager:
   - chooseBlue
   - leftController
   - Scene
+  - BeachTimeline
   layers:
   - Default
   - TransparentFX

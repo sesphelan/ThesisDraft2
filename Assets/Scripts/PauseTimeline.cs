@@ -22,8 +22,8 @@ public class PauseTimeline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (playableDirector.time >= 11f && lastTime < 11f && !paused)
+        
+        if (playableDirector.time >= 132f && lastTime < 132f && !paused)
         {
             playableDirector.Pause();
             Andromeda.SetActive(false);

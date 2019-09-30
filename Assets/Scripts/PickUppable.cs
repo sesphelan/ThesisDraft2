@@ -73,7 +73,14 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler, IPoin
                 }
                 else
                 {
-                    timeline.GetComponent<PauseTimeline>().playTimeline();
+                    if(timeline.tag != "BeachTimeline")
+                    {
+                        timeline.GetComponent<PauseTimeline>().playTimeline();
+                    }
+                    else
+                    {
+                        timeline.GetComponent<BeachTimelineController>().playTimeline();
+                    }
                 }
           
             }
