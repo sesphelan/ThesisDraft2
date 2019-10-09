@@ -119,16 +119,9 @@
     <Compile Include="Assets\Scripts\PauseTimeline.cs" />
     <Compile Include="Assets\Scripts\PickUppable.cs" />
     <Compile Include="Assets\Scripts\SelectShape.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor1.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\X Axis\Drawer_Pull_X.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\Z Axis\Drawer_Pull_Z.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\PlayerLook.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\PlayerMove.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
-    <None Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\Scripts by Acacia Developer.txt" />
     <None Include="Assets\Models\FRL.XR-master\FRL\IO\Examples\Teleportation\ScreenFader\Unlit Transparent HUD.shader" />
     <None Include="Assets\Models\DrawableObjects\Part 1\Butterfly (Animated)\Butterfly (Animated).txt" />
+    <None Include="Assets\Audio\Transcripts\Jo-001.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/FRL/Desktop/Sam_Thesis/Thesis_Tests-master/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
