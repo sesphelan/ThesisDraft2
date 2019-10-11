@@ -21,7 +21,7 @@ public class LoadScene : MonoBehaviour {
         txt.text = "Changed!";
     }*/
 
-    void LoadNewScene()
+    public void LoadNewScene()
     {
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("Table");

@@ -170,8 +170,8 @@ MonoBehaviour:
       y: 1
       width: 1
       height: 1
-    m_MarkerTimeStampsKeys: 60f3feff5e4400000a420000
-    m_MarkerTimeStampsValues: 5408807e6540d708dcb2e7218b43d7089ca6a6cb384cd708
+    m_MarkerTimeStampsKeys: 60f3feff5e4400000a4200000e4f0000
+    m_MarkerTimeStampsValues: 5408807e6540d708dcb2e7218b43d7089ca6a6cb384cd70832c06e66064dd708
   - collapsed: 0
     showMarkers: 1
     showInlineCurves: 0
