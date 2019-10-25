@@ -15,29 +15,28 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler, IPoin
 
     private Rigidbody rb;
     private Animator anim;
+    private Animator modelAnim;
+    private AudioSource audioData;
+    private AudioSource userAudio1;
+    private AudioSource userAudio2;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         anim = paper.GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        /*
-        if(grip == true) {
-            FixedJoint fx = XRController.GetComponent<FixedJoint>();
-            gameObject.transform.position = fx.transform.position;
-            gameObject.transform.rotation = fx.transform.rotation;
-        }
-        */
+        AudioSource[] aSources = bedroom.GetComponents<AudioSource>();
+        userAudio1 = aSources[0];
+        userAudio2 = aSources[1];
+        audioData = timeline.GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update () {
         
     }
 
     public void OnPointerTriggerPressDown(XREventData eventData)
     {
-        //This will only be called when the object is being pointed at by a controller.
-        //print("trigger");
         if(coll != null) {
             if(grip == false) {
                 grip = true;
@@ -61,15 +60,35 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler, IPoin
                 for (int i = 0; i < allObjects.Length; i++)
                     Destroy(allObjects[i]);
 
-                anim.Play("Paper");
-                anim.Play("Paper");
-                anim.Play("Paper");
+                if(timeline.tag != "BeachTimeline")
+                    anim.Play("Paper");
+
 
                 if (modelObject.tag != "Scene")
                 {
                     GameObject obj = Instantiate(modelObject);
-                    Renderer rend = obj.GetComponent<Renderer>();
-                    rend.material.SetColor("_Color", rend2.material.GetColor("_Color"));
+                    if(modelObject.tag == "guitar")
+                    {
+                        audioData.Play();
+                        userAudio2.Play();
+                    }
+                    else if(modelObject.tag == "butterfly")
+                    {
+                        userAudio1.Play();
+                    }
+                    else if(modelObject.tag == "ride")
+                    {
+                        userAudio1.Play();
+                    }
+                    else
+                    {
+                        audioData.Play();
+                        userAudio2.Play();
+                    }
+                    if(timeline.tag != "BeachTimeline")
+                        timeline.GetComponent<PauseTimeline>().playTimeline();
+                    else
+                        timeline.GetComponent<BeachTimelineController>().playTimeline();
                 }
                 else
                 {
@@ -92,34 +111,19 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler, IPoin
 
         Debug.Log("pick up");
         gameObject.transform.SetParent(XRController.transform);
-        XRController.transform.GetChild(0).GetComponent<Collider>().enabled = false;
+        //XRController.transform.GetChild(0).GetComponent<Collider>().enabled = false;
+        GameObject controller = GameObject.FindGameObjectWithTag("Finish");
+        controller.GetComponent<Collider>().enabled = false;
 
-        //Renderer doorRenderer = door.GetComponent<Renderer>();
-        //doorRenderer.material.color = Color.white;
-
-        
-        /*
-        FixedJoint fx = XRController.gameObject.AddComponent<FixedJoint>();
-        
-        fx.breakForce = 20000;
-        fx.breakTorque = 20000;
-        fx.connectedBody = rb;
-        */
     }
 
     public void release()
     {
         
         gameObject.transform.SetParent(bedroom.transform);
-        XRController.transform.GetChild(0).GetComponent<Collider>().enabled = true;
-        /*
-        if (XRController.gameObject.GetComponent<FixedJoint>()) {
-            FixedJoint fx = XRController.gameObject.GetComponent<FixedJoint>();
-            fx.connectedBody = null;
-            Destroy(fx);
-        }
-        */
-
+        // XRController.transform.GetChild(0).GetComponent<Collider>().enabled = true;
+        GameObject controller = GameObject.FindGameObjectWithTag("Finish");
+        controller.GetComponent<Collider>().enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)

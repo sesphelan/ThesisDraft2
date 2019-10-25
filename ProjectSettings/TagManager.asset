@@ -9,13 +9,17 @@ TagManager:
   - Controller
   - brushStroke
   - Bedroom
-  - chooseSphere
-  - chooseCube
-  - choosePink
-  - chooseBlue
   - leftController
   - Scene
   - BeachTimeline
+  - chooseGuitar
+  - chooseButterfly
+  - UI
+  - guitar
+  - butterfly
+  - chooseBeach
+  - chooseRide
+  - chooseDog
   layers:
   - Default
   - TransparentFX

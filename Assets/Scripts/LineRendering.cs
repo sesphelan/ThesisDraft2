@@ -37,17 +37,31 @@ public class LineRendering : MonoBehaviour {
 
             RaycastHit hit;
             if (Physics.Raycast(gameObject.transform.position, (gameObject.transform.forward * -20 + transform.position) - gameObject.transform.position, out hit)) {
-                if (hit.transform.gameObject.layer == 5) { // IF IT HITS A UI BUTTON 
-                    turnRed(hit.transform.gameObject.GetComponent<Button>());
+                if (hit.transform.gameObject.tag == "chooseButterfly" || hit.transform.gameObject.tag == "chooseGuitar" || hit.transform.gameObject.tag == "chooseBeach" || hit.transform.gameObject.tag == "chooseDog" || hit.transform.gameObject.tag == "chooseRide") { // IF IT HITS A UI BUTTON 
+                    if (hit.transform.gameObject.tag == "chooseButterfly")
+                    {
+                        turnRed(GameObject.FindGameObjectWithTag("chooseButterfly").GetComponent<Button>());
+                        turnWhite(GameObject.FindGameObjectWithTag("chooseGuitar").GetComponent<Button>());
+                    }
+                    else if (hit.transform.gameObject.tag == "chooseGuitar")
+                    {
+                        turnRed(GameObject.FindGameObjectWithTag("chooseGuitar").GetComponent<Button>());
+                        turnWhite(GameObject.FindGameObjectWithTag("chooseButterfly").GetComponent<Button>());
+                    }
+                    else
+                    {
+                        turnRed(GameObject.FindGameObjectWithTag(hit.transform.gameObject.tag).GetComponent<Button>());
+                    }
                 }
 
             }
             else {
-                GameObject[] buttons = new GameObject[4];
-                buttons[0] = GameObject.FindGameObjectWithTag("chooseCube");
-                buttons[1] = GameObject.FindGameObjectWithTag("chooseSphere");
-                buttons[2] = GameObject.FindGameObjectWithTag("choosePink");
-                buttons[3] = GameObject.FindGameObjectWithTag("chooseBlue");
+                GameObject[] buttons = new GameObject[5];
+                buttons[0] = GameObject.FindGameObjectWithTag("chooseButterfly");
+                buttons[1] = GameObject.FindGameObjectWithTag("chooseGuitar");
+                buttons[2] = GameObject.FindGameObjectWithTag("chooseBeach");
+                buttons[3] = GameObject.FindGameObjectWithTag("chooseDog");
+                buttons[4] = GameObject.FindGameObjectWithTag("chooseRide");
 
                 for (int i = 0; i < buttons.Length; i++) {
                     GameObject button = buttons[i];
