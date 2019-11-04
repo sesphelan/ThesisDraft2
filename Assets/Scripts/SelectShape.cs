@@ -73,10 +73,15 @@ public class SelectShape : MonoBehaviour, IGlobalTriggerPressDownHandler {
         if (chooseButterfly)
         {
             if(chooseButterfly.GetComponent<Button>().colors.normalColor == Color.red)
+            {
                 chalk = setModel(chalk, butterfly);
+                cleanUp();
+            }
             else if(chooseGuitar.GetComponent<Button>().colors.normalColor == Color.red)
+            {
                 chalk = setModel(chalk, guitar);
-            cleanUp();
+                cleanUp();
+            }
         }
         else
         {

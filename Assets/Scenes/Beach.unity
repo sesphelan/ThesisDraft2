@@ -289,7 +289,7 @@ RectTransform:
   m_Children:
   - {fileID: 1255526460}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -816,10 +816,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9ec82b3771d1f4a994d26460607678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushStroke: {fileID: 1705696792332461550, guid: 59eefd419e308ab4dac90989009ff3b6,
-    type: 3}
+  brushStroke: {fileID: 1972018520, guid: 6a79afcc90632a2408dd5bc69b8759b9, type: 3}
   modelObject: {fileID: 2788459832470449046, guid: 62e4996b298834641af0007fb3955c25,
     type: 3}
+  paper: {fileID: 1160603308}
+  timeline: {fileID: 1977147727}
 --- !u!54 &1316413267
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -989,7 +990,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 57d841c1eb1243e499fc8e8c14c92abb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1080,6 +1081,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4763492316144029}
     m_Modifications:
+    - target: {fileID: 6286210787539892894, guid: 35010883a2383484a8045c6d663d4ce2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286210787539892892, guid: 35010883a2383484a8045c6d663d4ce2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 963ebe7a40c547343b36f6c58b70f521, type: 2}
     - target: {fileID: 2402761119392849323, guid: 35010883a2383484a8045c6d663d4ce2,
         type: 3}
       propertyPath: m_Name
@@ -1140,16 +1151,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 6286210787539892894, guid: 35010883a2383484a8045c6d663d4ce2,
-        type: 3}
-      propertyPath: m_TagString
-      value: Finish
-      objectReference: {fileID: 0}
-    - target: {fileID: 6286210787539892892, guid: 35010883a2383484a8045c6d663d4ce2,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 963ebe7a40c547343b36f6c58b70f521, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35010883a2383484a8045c6d663d4ce2, type: 3}
 --- !u!4 &2102122351 stripped
@@ -2106,10 +2107,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.0000002
+  m_Radius: 0.51
   m_Height: 1.9999999
   m_Direction: 1
-  m_Center: {x: 0.0000023841858, y: 0.00000047683716, z: 0.0000038146973}
+  m_Center: {x: 0.0000023841858, y: 0.00000047683716, z: -0.68}
 --- !u!4 &1675285436896719117
 Transform:
   m_ObjectHideFlags: 0
@@ -2393,17 +2394,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6657088369718861862}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 6657088368512577103}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5.7844543, y: -0.99570197}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &6657088369718861859

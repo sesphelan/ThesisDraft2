@@ -400,10 +400,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.01
+  m_Radius: 0.005
   m_Height: 0.02
   m_Direction: 1
-  m_Center: {x: 0, y: -0.000000014901161, z: 0}
+  m_Center: {x: 0, y: -0.000000014901161, z: -0.008}
 --- !u!54 &28518173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1767,9 +1767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9ec82b3771d1f4a994d26460607678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushStroke: {fileID: 1705696792332461550, guid: 59eefd419e308ab4dac90989009ff3b6,
-    type: 3}
+  brushStroke: {fileID: 1972018520, guid: 6a79afcc90632a2408dd5bc69b8759b9, type: 3}
   modelObject: {fileID: 0}
+  paper: {fileID: 15336786}
 --- !u!54 &1174500494
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4997,6 +4997,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ViveController
       objectReference: {fileID: 0}
+    - target: {fileID: 6286210787539892894, guid: 35010883a2383484a8045c6d663d4ce2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 6283169529967100511, guid: 35010883a2383484a8045c6d663d4ce2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5071,6 +5076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6597596501514858407, guid: f4e879dd8475c2348b08390da47c4d3d,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 20016802384356953}
     - target: {fileID: 6597596501514858406, guid: f4e879dd8475c2348b08390da47c4d3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5176,11 +5186,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6597596501514858407, guid: f4e879dd8475c2348b08390da47c4d3d,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 20016802384356953}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4e879dd8475c2348b08390da47c4d3d, type: 3}
 --- !u!1001 &6657088368727524347
@@ -5195,6 +5200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6657088368050391733, guid: 3331f4cfc0e83a0478695fa90fbc8293,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 20016802384356953}
     - target: {fileID: 6657088368050391732, guid: 3331f4cfc0e83a0478695fa90fbc8293,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5300,11 +5310,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6657088368050391733, guid: 3331f4cfc0e83a0478695fa90fbc8293,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 20016802384356953}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3331f4cfc0e83a0478695fa90fbc8293, type: 3}
 --- !u!33 &6857725772854406635

@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\BeachTimelineController.cs" />
     <Compile Include="Assets\Scripts\CreateObject.cs" />
     <Compile Include="Assets\Scripts\Drawing.cs" />
+    <Compile Include="Assets\Scripts\FinalTimelineController.cs" />
     <Compile Include="Assets\Scripts\LineRendering.cs" />
     <Compile Include="Assets\Scripts\PauseTimeline.cs" />
     <Compile Include="Assets\Scripts\PickUppable.cs" />
