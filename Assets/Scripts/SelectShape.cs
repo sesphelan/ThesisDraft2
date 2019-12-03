@@ -12,6 +12,7 @@ public class SelectShape : MonoBehaviour, IGlobalTriggerPressDownHandler {
     public GameObject controllerModel;
     public GameObject dog;
     public GameObject ride;
+    public GameObject sizeCanvas;
 
     void Start()
     {
@@ -69,19 +70,23 @@ public class SelectShape : MonoBehaviour, IGlobalTriggerPressDownHandler {
         GameObject chooseBeach = GameObject.FindGameObjectWithTag("chooseBeach");
         GameObject chooseDog = GameObject.FindGameObjectWithTag("chooseDog");
         GameObject chooseRide = GameObject.FindGameObjectWithTag("chooseRide");
+        GameObject chooseSmall = GameObject.FindGameObjectWithTag("chooseSmall");
+        GameObject chooseMedium = GameObject.FindGameObjectWithTag("chooseMedium");
+        GameObject chooseLarge = GameObject.FindGameObjectWithTag("chooseLarge");
 
         if (chooseButterfly)
         {
             if(chooseButterfly.GetComponent<Button>().colors.normalColor == Color.red)
             {
                 chalk = setModel(chalk, butterfly);
-                cleanUp();
             }
             else if(chooseGuitar.GetComponent<Button>().colors.normalColor == Color.red)
             {
                 chalk = setModel(chalk, guitar);
-                cleanUp();
             }
+
+            cleanUp();
+
         }
         else
         {
@@ -93,11 +98,32 @@ public class SelectShape : MonoBehaviour, IGlobalTriggerPressDownHandler {
             if (chooseDog)
             {
                 chalk = setModel(chalk, dog);
-                cleanUp();
+                // cleanUp();
+                GameObject canvas = GameObject.FindGameObjectWithTag("UI");
+                canvas.SetActive(false);
+
+                sizeCanvas.SetActive(true);
             }
             if (chooseRide)
             {
                 chalk = setModel(chalk, ride);
+                cleanUp();
+            }
+
+            if (chooseSmall)
+            {
+                if (chooseSmall.GetComponent<Button>().colors.normalColor == Color.red) // small
+                {
+                    chalk.GetComponent<PickUppable>().scale = 0.5f;
+                }
+                else if (chooseMedium.GetComponent<Button>().colors.normalColor == Color.red) // medium
+                {
+                    chalk.GetComponent<PickUppable>().scale = 1f;
+                }
+                else // large
+                {
+                    chalk.GetComponent<PickUppable>().scale = 5f;
+                }
                 cleanUp();
             }
 

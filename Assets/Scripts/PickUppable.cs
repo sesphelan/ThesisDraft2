@@ -12,6 +12,8 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler, IPoin
     public GameObject door;
     public GameObject timeline;
     public GameObject paper;
+    public Color modelColor;
+    public float scale = 1f;
 
     private Rigidbody rb;
     private Animator anim;
@@ -67,6 +69,33 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler, IPoin
                 if (modelObject.tag != "Scene")
                 {
                     GameObject obj = Instantiate(modelObject);
+                    obj.transform.localScale = new Vector3(scale, scale, scale);
+                    if (modelColor != Color.black)
+                    {
+                        Transform[] children = obj.GetComponentsInChildren<Transform>();
+                        Renderer rend = obj.GetComponent<Renderer>();
+                        if(children.Length > 1)
+                        {
+                            for (int i = 1; i < children.Length; i++)
+                            {
+                                GameObject child = children[i].gameObject;
+                                Renderer childRend = child.GetComponent<Renderer>();
+                                childRend.material.shader = Shader.Find("_Color"); // get color of brush stroke
+                                childRend.material.SetColor("_Color", modelColor);
+                                Shader sh = Shader.Find("Diffuse");
+                                childRend.material.shader = sh;
+                            }
+                        }
+                        else
+                        {
+                            rend.material.SetColor("_Color", modelColor);
+                        }
+
+                        //Shader sh = Shader.Find("Diffuse");
+                        //rend.material.shader = sh;
+                        // modelColor = Color.black;
+
+                    }
                     if(modelObject.tag == "guitar")
                     {
                         audioData.Play();

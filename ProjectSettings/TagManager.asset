@@ -20,6 +20,9 @@ TagManager:
   - chooseBeach
   - chooseRide
   - chooseDog
+  - chooseSmall
+  - chooseLarge
+  - chooseMedium
   layers:
   - Default
   - TransparentFX

@@ -36,11 +36,18 @@ public class Drawing : MonoBehaviour
 
         gameObject.transform.position = obj.transform.position;
 
-        //Renderer rend = obj.GetComponent<Renderer>();
-        //rend.material.shader = Shader.Find("_Color"); // get color of brush stroke
+        Renderer rend = obj.transform.GetChild(0).GetComponent<Renderer>();
+        rend.material.shader = Shader.Find("_Color"); // get color of brush stroke
 
-        //Renderer rend2 = GameObject.FindGameObjectWithTag("Drawer").GetComponent<Renderer>(); // set color as color of chalk
-        //rend.material.SetColor("_Color", rend2.material.GetColor("_Color"));
+        Renderer rend2 = GameObject.FindGameObjectWithTag("Drawer").GetComponent<Renderer>(); // set color as color of chalk
+        Color modelColor = rend2.material.GetColor("_Color");
+        rend.material.SetColor("_Color", modelColor);
+
+        GameObject chalk = GameObject.FindGameObjectWithTag("Drawer");
+        chalk.GetComponent<PickUppable>().modelColor = modelColor;
+
+        Shader sh = Shader.Find("Diffuse");
+        rend.material.shader = sh;
 
     }
 
